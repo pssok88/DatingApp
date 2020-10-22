@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using API.Data;
 using API.DTOs;
 using API.Entities;
+using API.Interfaces;
 using API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -13,8 +14,8 @@ namespace API.Controllers
     public class AccountController : BaseApiControoler
     {
         private readonly DataContext _context;
-        private readonly TokenService _tokenService;
-        public AccountController(DataContext context, TokenService tokenService)
+        private readonly ITokenService _tokenService;
+        public AccountController(DataContext context, ITokenService tokenService)
         {
             _tokenService = tokenService;
             _context = context;
