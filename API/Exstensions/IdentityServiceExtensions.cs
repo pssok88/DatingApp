@@ -11,7 +11,8 @@ namespace API.Exstensions
         public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration config)
         {
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            .AddJwtBearer(options =>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
                 {

@@ -16,6 +16,7 @@ namespace API.Exstensions
             {
                 options.UseSqlite(config.GetConnectionString("DefaultConnection"));
             });
+            
             return services;
 
         }
