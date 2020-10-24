@@ -3,14 +3,16 @@ using System;
 using API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace API.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20201024165334_extendedAppUser")]
+    partial class extendedAppUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,7 +30,7 @@ namespace API.Data.Migrations
                     b.Property<string>("Country")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("CreatedDate")
+                    b.Property<DateTime>("Created")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("DateOfBirth")
